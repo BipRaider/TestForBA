@@ -1,0 +1,43 @@
+#main {
+  @include list-flex();
+  width: 100%;
+  margin: 0 auto;
+}
+
+#users {
+  @include list-flex();
+
+  width: calc(100% - 3em);
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+.list {
+  @include list-flex('users-list');
+  width: 100%;
+  padding-top: 50px;
+  margin: 0 auto;
+  & > * {
+    border-left: 1px solid #000000;
+    border-top: 1px solid #000000;
+  }
+  & > *:last-child {
+    border-bottom: 1px solid #000000;
+  }
+}
+
+a {
+  @include list-flex('link');
+
+  font-family: OxygenVerdana;
+  font-size: 1em;
+  font-weight: 800;
+  color: $color-primary-2;
+
+  @include transitions();
+
+  &:hover {
+    color: $color-complement-0;
+    @include transitions();
+  }
+}

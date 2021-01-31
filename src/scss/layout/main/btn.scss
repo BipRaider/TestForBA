@@ -1,0 +1,29 @@
+.btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 3em;
+  height: 3em;
+
+  background-color: $color-primary-2;
+
+  border-style: none;
+  border-radius: 50% 0 50% 0;
+  -webkit-border-radius: 50% 0 50% 0;
+  -moz-border-radius: 50% 0 50% 0;
+  -ms-border-radius: 50% 0 50% 0;
+  -o-border-radius: 50% 0 50% 0;
+
+  @include transitions();
+
+  cursor: pointer;
+  &:hover {
+    background-color: $color-primary-4;
+  }
+  &::before {
+    content: '\2718';
+    font-size: 1.4em;
+    color: $color-complement-3;
+  }
+}

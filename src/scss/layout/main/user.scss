@@ -1,0 +1,32 @@
+.user {
+  @include list-flex('user');
+  width: calc(100% - 4em);
+  & > * {
+    @include list-flex('link');
+    width: 100%;
+    min-height: 40px;
+
+    padding-left: 5px;
+
+    font-family: OxygenVerdana;
+    font-size: 1em;
+    font-weight: 800;
+    color: $color-primary-2;
+
+    border-right: 1px solid #000000;
+  }
+  & span {
+    text-transform: capitalize;
+  }
+}
+
+@media screen and (max-width: 600px) {
+}
+@media screen and (min-width: 600.1px) and (max-width: 768px) {
+}
+@media screen and (min-width: 768.1px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1024.1px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1920.1px) {
+}

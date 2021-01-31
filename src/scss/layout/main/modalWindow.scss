@@ -1,0 +1,147 @@
+#wrapper {
+  @include list-flex('modalWindow');
+
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(202, 202, 202, 0.788);
+}
+
+.modal {
+  position: absolute;
+
+  width: 500px;
+  margin-top: 3em;
+
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+
+  background-color: $color-white;
+
+  & div {
+    padding: 0 1em;
+  }
+
+  & div:last-child {
+    padding: 0 1em 1em 1em;
+  }
+
+  & p {
+    font-size: 1em;
+    font-family: OxygenVerdana;
+    font-weight: 600;
+    line-height: 1.3;
+    color: $color-primary-2;
+  }
+
+  & span {
+    color: $color-complement-3;
+    @include transitions();
+    padding-left: 1em;
+  }
+
+  &-nick {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 100%;
+
+    font-size: 2em;
+    line-height: 1.5;
+    color: $color-primary-2;
+
+    margin-bottom: 15px;
+
+    background-color: $color-complement-3;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 2em;
+  }
+
+  &-name {
+    font-size: 1.2em;
+    font-family: OxygenVerdana;
+    font-weight: 800;
+    line-height: 2;
+
+    color: $color-primary-2;
+
+    & span {
+      padding-left: 1em;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    & a span {
+      @include transitions();
+      &:hover {
+        color: $color-primary-2;
+      }
+    }
+
+    &__email {
+      &::before {
+        content: '\0040';
+        position: relative;
+        top: -4px;
+
+        font-size: 1.3em;
+      }
+    }
+
+    &__phone {
+      &::before {
+        content: '\2706';
+        font-size: 1.3em;
+      }
+    }
+
+    &__website {
+      &::before {
+        content: '\04BC';
+        font-size: 1.3em;
+      }
+    }
+  }
+
+  &-info::after,
+  &-address::after {
+    content: '';
+    width: 70%;
+    height: 1px;
+
+    margin: 0 auto;
+    margin-top: 0.5em;
+
+    background-color: $color-primary-2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal {
+    width: calc(100% - 2em);
+  }
+}
+@media screen and (min-width: 600.1px) and (max-width: 768.1px) {
+  .modal {
+    width: calc(100% - 5em);
+  }
+}
+@media screen and (min-width: 768.1px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1024.1px) and (max-width: 1920px) {
+}
+@media screen and (min-width: 1920.1px) {
+}
