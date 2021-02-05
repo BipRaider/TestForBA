@@ -1,11 +1,12 @@
 #wrapper {
   @include list-flex('modalWindow');
-
-  position: absolute;
+  position: fixed;
   z-index: 9999;
+
   width: 100%;
   height: 100vh;
-  background-color: rgba(202, 202, 202, 0.788);
+
+  background-color: $color_wrapper;
 }
 
 .modal {
@@ -14,11 +15,7 @@
   width: 500px;
   margin-top: 3em;
 
-  border-radius: 1em;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  -ms-border-radius: 1em;
-  -o-border-radius: 1em;
+  @include border-radius(1em, 1em, 1em, 1em);
 
   background-color: $color-white;
 
@@ -31,48 +28,31 @@
   }
 
   & p {
-    font-size: 1em;
-    font-family: OxygenVerdana;
-    font-weight: 600;
-    line-height: 1.3;
-    color: $color-primary-2;
+    @extend %fontTextModalWindow;
   }
 
   & span {
     color: $color-complement-3;
-    @include transitions();
     padding-left: 1em;
+
+    @include transitions();
   }
 
   &-nick {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    @include list-flex('modalWindowNickName');
+    @extend %fontTextModalWindowNick;
 
     width: 100%;
-
-    font-size: 2em;
-    line-height: 1.5;
-    color: $color-primary-2;
 
     margin-bottom: 15px;
 
     background-color: $color-complement-3;
 
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 2em;
+    @include border-radius(0, 0, 0, 2em);
   }
 
   &-name {
-    font-size: 1.2em;
-    font-family: OxygenVerdana;
-    font-weight: 800;
-    line-height: 2;
-
-    color: $color-primary-2;
+    @extend %fontTextModalWindowName;
 
     & span {
       padding-left: 1em;
@@ -80,12 +60,11 @@
   }
 
   &-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    @include list-flex('modalWindowInfo');
 
     & a span {
       @include transitions();
+
       &:hover {
         color: $color-primary-2;
       }
@@ -138,10 +117,4 @@
   .modal {
     width: calc(100% - 5em);
   }
-}
-@media screen and (min-width: 768.1px) and (max-width: 1024px) {
-}
-@media screen and (min-width: 1024.1px) and (max-width: 1920px) {
-}
-@media screen and (min-width: 1920.1px) {
 }

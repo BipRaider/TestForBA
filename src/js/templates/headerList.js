@@ -1,11 +1,11 @@
 'use strick';
 
 export default () => `
-      <li class="user" data-type="header-list">
-        <span id="username">username</span>
-        <span id="name">name</span>
-        <span id="email">email</span>
-        <span id="phone">phone</span>
-        <span id="website">website</span>
-      </li>
+      <div class="header-list" data-type="header-list">
+        <span id="username">Nickname</span>
+        <span id="name">Ful Name</span>
+        <span id="email">Email</span>
+        <span id="phone">Phone</span>
+        <span id="website">Website</span>
+      </div>
 `;

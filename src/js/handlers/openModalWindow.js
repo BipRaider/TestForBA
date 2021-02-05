@@ -1,7 +1,7 @@
 'use strick';
 
 import ModalWindow from '../components/ModalWindow';
-import { list, users } from '../dom/refs';
+import { list, main } from '../dom/refs';
 import { findElement, getUserById } from '../helpers';
 import closeModalWindow from './closeModalWindow';
 
@@ -13,7 +13,8 @@ export default db => {
       getUserById(id, db)
         .then(data => {
           ModalWindow(data);
-          closeModalWindow(findElement(users));
+
+          closeModalWindow(findElement(main));
         })
         .catch(err => {
           throw err;

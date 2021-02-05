@@ -9,3 +9,37 @@
   outline: none;
   border: none;
 }
+// @extend %fontText;
+%fontText {
+  font-family: OxygenVerdana;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 2.5em;
+
+  color: $color-primary-2;
+}
+
+// @extend %fontTextModalWindow;
+%fontTextModalWindow {
+  font-size: 1em;
+  font-family: OxygenVerdana;
+  font-weight: 600;
+  line-height: 1.3;
+  color: $color-primary-2;
+}
+
+// @extend %fontTextModalWindowName;
+%fontTextModalWindowName {
+  font-size: 1.2em;
+  font-family: OxygenVerdana;
+  font-weight: 800;
+  line-height: 2;
+
+  color: $color-primary-2;
+}
+// @extend %fontTextModalWindowNick;
+%fontTextModalWindowNick {
+  font-size: 2em;
+  line-height: 1.5;
+  color: $color-primary-2;
+}

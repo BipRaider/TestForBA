@@ -3,10 +3,10 @@
 export default ({ email, id, name, phone, username, website }) => {
   return `
   <li class="user" data-item="${id}">
-      <span>${username}</span>
-      <span>${name}</span>
-      <a href="mailto:${email}"> ${email}</a>
-      <a href="tel:+${phone}">+${phone}</a>
-      <a href="http://${website}">${website}</a>
+      <span data-label="Nickname:">${username}</span>
+      <span data-label="Full Name:">${name}</span>
+      <a href="mailto:${email}" data-label="Email:"> ${email}</a>
+      <a href="tel:+${phone}" data-label="Phone:">+${phone}</a>
+      <a href="http://${website}" data-label="Website:" >${website}</a>
   </li>`;
 };

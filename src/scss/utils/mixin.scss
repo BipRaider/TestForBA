@@ -1,11 +1,24 @@
-//@include transitions(tag, time);
-//@include transitions();
-@mixin transitions($tag: all, $time: 0.2s) {
+// @include transitions(tag, time);
+// @include transitions();
+@mixin transitions($time: 0.2s, $tag: all) {
   transition: $tag $time ease-out;
   -webkit-transition: $tag $time ease-out;
   -moz-transition: $tag $time ease-out;
   -ms-transition: $tag $time ease-out;
   -o-transition: $tag $time ease-out;
+}
+// @include border-radius(top-left, top-right, bottom-left, bottom-right);
+@mixin border-radius(
+  $top-left: 0,
+  $top-right: 0,
+  $bottom-left: 0,
+  $bottom-right: 0
+) {
+  border-top-left-radius: $top-left;
+  border-top-right-radius: $top-right;
+
+  border-bottom-left-radius: $bottom-left;
+  border-bottom-right-radius: $bottom-right;
 }
 
 // @include list-flex();
@@ -40,14 +53,6 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-  } @else if $name== 'modalWindow' {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
   } @else if $name== 'user' {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -65,5 +70,47 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+  } @else if $name== 'header-list' {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  } @else if $name== 'modalWindow' {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  } @else if $name== 'modalWindowNickName' {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  } @else if $name== 'modalWindowInfo' {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
 }
